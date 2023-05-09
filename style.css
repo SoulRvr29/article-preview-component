@@ -67,6 +67,7 @@ article h1 {
   align-items: center;
   padding: 1rem min(4vw, 2rem);
   border-radius: 0 0 0.6rem 0.6rem;
+  overflow: hidden;
 }
 h2 {
   font-size: var(--default-font);
@@ -76,6 +77,9 @@ h2 {
   height: 2.5rem;
   border-radius: 10rem;
 }
+.authorInfo {
+  color: var(--light-grey);
+}
 .author {
   display: flex;
   gap: 1rem;
@@ -84,6 +88,7 @@ h2 {
   visibility: hidden;
 }
 button {
+  z-index: 1;
   border: none;
   width: 2rem;
   height: 2rem;
@@ -116,9 +121,14 @@ button:hover {
 }
 .social {
   background-color: var(--dark-grey);
-  display: none;
+  display: flex;
   justify-content: space-around;
   gap: 1rem;
+  opacity: 0;
+  transition: opacity 0.5s;
+  padding: 2rem 8rem 2rem 3.5rem;
+  left: -17.5rem;
+  position: absolute;
 }
 .social img {
   height: 1.5rem;
@@ -180,16 +190,19 @@ footer a:hover {
   }
   .authorBar {
     margin-top: 1rem;
+    overflow: visible;
   }
+
   .social {
     position: absolute;
     top: -5rem;
-    right: -2rem;
+    left: -10.8rem;
     padding: 1rem 2rem;
     box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.1);
     background-color: var(--dark-grey);
     border-radius: 1rem;
     margin-right: 1rem;
+    width: 250px;
   }
   .barBkg {
     background-color: var(--white);
@@ -201,15 +214,15 @@ footer a:hover {
 
 @media screen and (min-width: 900px) {
   .social {
-    right: -6.5rem;
+    left: -6.5rem;
   }
   .arrow {
     left: 7.3rem;
   }
 }
 
-@media screen and (max-width: 320px) {
-  .socialMenu {
-    gap: 0.8rem;
+@media screen and (max-width: 340px) {
+  .social {
+    left: -15rem;
   }
 }
